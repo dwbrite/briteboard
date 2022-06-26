@@ -86,7 +86,7 @@ fn main() -> ! {
     let mut pin = GPIO::new(pins.p2).output();
     pin.set_fast(true);
 
-    let mut ws = ws2812_nop_imxrt1062::Ws2812::new(pin);
+    let mut ws = ws2812_nop_imxrt1062::Ws2812::new(pin, 600.0);
 
     let (_, _, _, mut one_builder) = periphs.spi.clock(&mut periphs.ccm.handle, ClockSelect::Pll2, PrescalarSelect::LPSPI_PODF_2);
     let mut spi = one_builder.build(pins.p11, pins.p12, pins.p13);
@@ -112,11 +112,11 @@ fn main() -> ! {
 
     loop {
 
-        display.set_pixel(30, 30, 0xFFFF);
+        // display.set_pixel(30, 30, 0xFFFF);
         ws.write(data.iter().cloned()).unwrap();
         systick.delay_ms(500);
 
-        display.clear();
+        // display.clear();
         ws.write(empty.iter().cloned()).unwrap();
         systick.delay_ms(500);
     }

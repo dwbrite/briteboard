@@ -12,7 +12,7 @@ log = "0.4.11"
 teensy4-panic = "0.2.0"
 
 # LEDs
-ws2812-nop-imxrt1062 = { path = "../ws2812-nop-imxrt1062" }
+ws2812-nop-imxrt1062 = "0.2.0"
 smart-leds = "0.3.0"
 
 # OLED

@@ -471,7 +471,9 @@ dependencies = [
 
 [[package]]
 name = "ws2812-nop-imxrt1062"
-version = "0.1.1"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f3239a301fdb9c1091f7a3ef8af38f14dd69f7a0f18066b9a4f47234e4dbd978"
 dependencies = [
  "embedded-hal",
  "smart-leds-trait",
